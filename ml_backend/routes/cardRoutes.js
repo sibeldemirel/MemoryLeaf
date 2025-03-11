@@ -4,8 +4,8 @@ const { createCard, getCardsByDeck, updateCard, deleteCard } = require("../contr
 const router = express.Router();
 
 router.post("/", createCard);
-router.get("/:deckId", getCardsByDeck);
-router.put("/:id", updateCard); 
-router.delete("/:id", deleteCard);
+router.get("/deck/:deckId", getCardsByDeck); 
+router.put("/:cardId", updateCard);  
+router.delete("/:cardId", deleteCard);
 
 module.exports = router;
