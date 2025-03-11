@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const sequelize = require("./config/db");
 const cardRoutes = require("./routes/cardRoutes");
+const deckRoutes = require("./routes/deckRoutes");
 
 const app = express();
 app.use(express.json());
@@ -16,8 +17,8 @@ app.use((req, res, next) => {
   next();
 });
 
-
 app.use("/cards", cardRoutes);
+app.use("/decks", deckRoutes);
 
 const PORT = process.env.PORT || 5000;
 
